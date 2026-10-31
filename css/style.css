@@ -10,6 +10,9 @@ body {
     background-color: #ffffff;
     color: #292824;
     line-height: 1.6;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .site-header {
@@ -47,13 +50,6 @@ body {
     color: #8C806B;
 }
 
-body {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-
 .hero-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -62,18 +58,15 @@ body {
 }
 
 .hero-main {
-    background-color: #D9BBA5;
-    border-radius: 5px;
-    padding: 32px;
-    min-height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-}
-
-.hero-main {
     gap: 24px;
+    background-color: #D9BBA5;
+    border-radius: 5px;
+    padding: 32px;
+    min-height: 300px;
 }
 
 .hero-text {
@@ -121,13 +114,13 @@ body {
 }
 
 .hero-info {
-    background-color: #F7F2E9;
-    border-radius: 5px;
-    padding: 32px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 16px;
+    background-color: #F7F2E9;
+    border-radius: 5px;
+    padding: 32px;
 }
 
 .hero-info h2 {
@@ -147,8 +140,7 @@ body {
 
 .cards-gallery {
     display: grid;
-    grid-template-columns:
-        repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 16px;
 }
 
@@ -156,7 +148,6 @@ body {
 .card {
     display: flex;
     flex-direction: column;
-
     background-color: #F1DED0;
     padding: 16px;
     border-radius: 5px;
@@ -192,62 +183,6 @@ body {
     text-decoration: underline;
 }
 
-
-.site-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #625C48;
-    color: white;
-    padding: 24px;
-    border-radius: 10px;
-    font-size: 14px;
-}
-
-
-@media (min-width: 768px) {
-
-    body {
-        padding: 40px;
-    }
-
-    .site-header {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 20px 32px;
-    }
-
-    .hero-grid {
-        grid-template-columns: 2fr 1fr;
-    }
-
-    .hero-main h1 {
-        font-size: 36px;
-    }
-
-    .hero-main,
-    .hero-info {
-        min-height: 330px;
-    }
-
-    .site-footer {
-        justify-content: space-between;
-    }
-
-    .hero-main {
-    flex-direction: row;
-    align-items: center;
-    }
-
-    .hero-photo {
-    flex: 1;
-    min-width: 0;
-    }
-}
-
-
-/* Detail Page */
-
 .detail-hero {
     background-color: #F1DED0;
     padding: 32px;
@@ -267,6 +202,10 @@ body {
     margin-bottom: 24px;
 }
 
+.detail-content {
+    min-width: 0;
+}
+
 .detail-content h2 {
     font-size: 24px;
     margin-bottom: 16px;
@@ -277,11 +216,19 @@ body {
     margin-bottom: 24px;
 }
 
-.detail-image {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
+.website-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
     margin-bottom: 24px;
+}
+
+.website-gallery img {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    background-color: #F7F2E9;
+    border-radius: 10px;
 }
 
 .project-details {
@@ -304,12 +251,60 @@ body {
     margin-bottom: 20px;
 }
 
-/* Detail Page Desktop */
+.site-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #625C48;
+    color: white;
+    padding: 24px;
+    border-radius: 10px;
+    font-size: 14px;
+}
 
 @media (min-width: 768px) {
-
-    .content-grid {
-        grid-template-columns: 3fr 1fr;
+    body {
+        padding: 40px;
     }
 
+    .site-header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px 32px;
+    }
+
+    .hero-grid {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .hero-main {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .hero-main,
+    .hero-info {
+        min-height: 330px;
+    }
+
+    .hero-main h1 {
+        font-size: 36px;
+    }
+
+    .hero-photo {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .content-grid {
+        grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+    }
+
+    .website-gallery {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .site-footer {
+        justify-content: space-between;
+    }
 }
